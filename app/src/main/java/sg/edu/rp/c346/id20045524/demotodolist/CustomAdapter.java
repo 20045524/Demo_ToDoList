@@ -43,7 +43,16 @@ public class CustomAdapter extends ArrayAdapter<ToDoItem> {
 
         // Set values to the TextView to display the corresponding information - Populate
         tvTitle.setText(currentToDo.getTitle());
-        tvDate.setText(currentToDo.toString());
+        Calendar todayDate = Calendar.getInstance();
+        todayDate.set(2022,7,21);
+
+        if (currentToDo.getDate().before(todayDate)){
+            tvDate.setText(currentToDo.getDateString());
+            tvDate.setTextColor(parent_context.getResources().getColor(R.color.red));
+        } else {
+            tvDate.setText(currentToDo.getDateString());
+        }
+
 
         return rowView;
     }

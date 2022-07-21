@@ -1,6 +1,8 @@
 package sg.edu.rp.c346.id20045524.demotodolist;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class ToDoItem {
 
@@ -26,6 +28,13 @@ public class ToDoItem {
 
     public void setDate(Calendar date) {
         this.date = date;
+    }
+
+    public String getDateString(){
+        Date date2 = this.date.getTime();
+        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy (EEEE)");
+        String dateStr = format1.format(date2);
+        return dateStr;
     }
 
     public String toString() {
