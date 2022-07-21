@@ -42,6 +42,8 @@ public class ToDoItem {
                 +"/"+date.get(Calendar.YEAR) + " (" + getDay(date.get(Calendar.DAY_OF_WEEK)) + ")";
 
         return str;
+
+        return "Product Name: " + name + "\nPrice: $" + price;
     }
 
     private String getDay(int day) {
